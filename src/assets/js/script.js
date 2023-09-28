@@ -15,7 +15,16 @@ const swiper = new Swiper('.hotel-swiper', {
             spaceBetween: 20,
           }
       }
-  });
+});
+const swiper2 = new Swiper('.head-swiper', {
+    loop: true,
+    slidesPerView:1,
+    freeMode:true,
+    navigation: {
+      nextEl: '.head-btn-next',
+      prevEl: '.head-btn-prev',
+    },
+});
 
 
 const burger = document.querySelector('.burger');
