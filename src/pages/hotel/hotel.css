@@ -311,7 +311,8 @@
 .hotel-info-block .content .swiper-container .hotel-swiper .swiper-wrapper .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: 0.3s ease;
 }
 .hotel-info-block .content .swiper-container .hotel-swiper .swiper-wrapper .swiper-slide:hover img {
@@ -331,6 +332,4 @@
   .map {
     height: 300px;
   }
-}
-
-/*# sourceMappingURL=hotel.css.map */
+}/*# sourceMappingURL=hotel.css.map */

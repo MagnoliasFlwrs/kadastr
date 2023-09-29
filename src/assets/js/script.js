@@ -163,3 +163,57 @@ if (servicesSelect) {
       })
   })
 }
+
+
+// check-modal
+
+const checkBtn = document.querySelector('.check-btn');
+const checkModal = document.querySelector('.check-modal');
+const overlay = document.querySelector('.overlay');
+const checkModalClose = document.querySelector('.close-wrap');
+
+function openCheckModal() {
+  checkBtn.addEventListener('click' , ()=> {
+    overlay.classList.add('open');
+    checkModal.classList.add('active');
+  })
+}
+const checkModalCloseArr = [overlay , checkModalClose];
+
+function closeCheckModal()  {
+  checkModalCloseArr.forEach(el => {
+    el.addEventListener('click' , ()=> {
+      overlay.classList.remove('open');
+      checkModal.classList.remove('active');
+    })
+  })
+}
+
+openCheckModal() ;
+closeCheckModal();
+
+// order-modal
+
+const orderBtn = document.querySelector('.order-btn');
+const orderModal = document.querySelector('.order-modal');
+const orderModalClose = document.querySelector('.order-modal .close-wrap');
+
+function openOrderModal() {
+  orderBtn.addEventListener('click' , ()=> {
+    overlay.classList.add('open');
+    orderModal.classList.add('active');
+  })
+}
+const orderModalCloseArr = [overlay , orderModalClose];
+
+function closeOrderModal()  {
+  orderModalCloseArr.forEach(el => {
+    el.addEventListener('click' , ()=> {
+      overlay.classList.remove('open');
+      orderModal.classList.remove('active');
+    })
+  })
+}
+
+openOrderModal() ;
+closeOrderModal();
