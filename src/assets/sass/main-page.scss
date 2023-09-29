@@ -357,6 +357,7 @@
             font-weight: 400;
             line-height: 50%; /* 9px */
             cursor: pointer;
+            transition: .3s ease;
 
             @media (max-width:768px) {
                 font-size: 16px;

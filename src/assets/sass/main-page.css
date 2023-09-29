@@ -375,6 +375,7 @@
   font-weight: 400;
   line-height: 50%; /* 9px */
   cursor: pointer;
+  transition: 0.3s ease;
 }
 @media (max-width: 768px) {
   .news-block .news-filter li {

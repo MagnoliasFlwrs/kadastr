@@ -96,6 +96,28 @@ const swiper5 = new Swiper('.stroke2-swiper', {
           }
       }
 });
+const swiper6 = new Swiper('.registration-swiper', {
+  loop: true,
+  slidesPerView:1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.registration-btn-next',
+    prevEl: '.registration-btn-prev',
+  },
+  breakpoints: {
+      1024: {
+        slidesPerView: 2,
+      },
+      1200: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1400: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        }
+    }
+});
 
 
 const burger = document.querySelector('.burger');
@@ -191,7 +213,7 @@ function closeCheckModal()  {
 if (checkBtn) {
   openCheckModal() ;
   closeCheckModal();
-} 
+}
 
 
 // order-modal
@@ -219,4 +241,4 @@ function closeOrderModal()  {
 if (orderBtn) {
   openOrderModal() ;
 closeOrderModal();
-} 
+}
