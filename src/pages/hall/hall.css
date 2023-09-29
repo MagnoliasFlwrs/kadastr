@@ -1,0 +1,266 @@
+@import url(../../assets/styles/style.css);
+@import url(../../assets/styles/swiper-bundle.min.css);
+@import url(../../assets/styles/header.css);
+@import url(../../assets/styles/footer.css);
+.head-row {
+  padding: 20px 0 50px;
+  width: 100%;
+}
+.head-row h1 {
+  color: #090909;
+  font-family: Montserrat;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 65px */
+  margin-top: 104px;
+  margin-bottom: 50px;
+}
+@media (max-width: 1024px) {
+  .head-row h1 {
+    font-size: 35px;
+  }
+}
+.head-row .table {
+  display: flex;
+  padding: 15px 100px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(52, 68, 93, 0.12);
+}
+@media (max-width: 1200px) {
+  .head-row .table {
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .head-row .table {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+.head-row .table li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.head-row .table li span {
+  color: #34445D;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+.head-row .table li span:last-child {
+  color: #34445D;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 32.5px */
+}
+
+.cameras {
+  padding: 50px 0 100px;
+}
+.cameras .content {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .cameras .content {
+    gap: 50px;
+  }
+}
+.cameras .content .cam-wrap {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+}
+@media (max-width: 1024px) {
+  .cameras .content .cam-wrap {
+    flex-direction: column;
+  }
+}
+.cameras .content .cam-wrap .img {
+  max-width: calc((100% - 50px) / 2);
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  height: 409px;
+}
+@media (max-width: 1024px) {
+  .cameras .content .cam-wrap .img {
+    max-width: 100%;
+  }
+}
+.cameras .content .cam-wrap .img img {
+  display: block;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cameras .content .clients-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  justify-content: center;
+}
+.cameras .content .clients-stat h2 {
+  color: #1A2A37;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 52px */
+}
+@media (max-width: 768px) {
+  .cameras .content .clients-stat h2 {
+    font-size: 30px;
+  }
+}
+.cameras .content .clients-stat .stat-wrap {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .cameras .content .clients-stat .stat-wrap {
+    gap: 50px;
+    flex-direction: column;
+  }
+}
+.cameras .content .clients-stat .stat-wrap .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+.cameras .content .clients-stat .stat-wrap .stat p {
+  color: #1A2A37;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 26px */
+}
+.cameras .content .clients-stat .stat-wrap .stat .line {
+  width: 100%;
+  height: 1px;
+  background: rgba(26, 42, 55, 0.4);
+}
+.cameras .content .clients-stat .stat-wrap .stat span {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+.cameras .content .line {
+  width: 100%;
+  height: 1px;
+  background: #D9D9D9;
+}
+.cameras .content .schedule {
+  width: 100%;
+}
+.cameras .content .schedule .schedule-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+@media (max-width: 768px) {
+  .cameras .content .schedule .schedule-box {
+    gap: 50px;
+    flex-direction: column;
+  }
+}
+.cameras .content .schedule .schedule-box .schedule-col {
+  max-width: calc((100% - 50px) / 2);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+@media (max-width: 768px) {
+  .cameras .content .schedule .schedule-box .schedule-col {
+    max-width: 100%;
+  }
+}
+.cameras .content .schedule .schedule-box .schedule-col p {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+  display: flex;
+  gap: 10px;
+}
+.cameras .content .schedule .schedule-box .schedule-col p.schedule-title {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 26px */
+}
+.cameras .content .schedule .schedule-box .schedule-col p.schedule-title-icon::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M19 4H5C3.89543 4 3 4.89543 3 6V20C3 21.1046 3.89543 22 5 22H19C20.1046 22 21 21.1046 21 20V6C21 4.89543 20.1046 4 19 4Z' stroke='%23EE8F00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16 2V6' stroke='%23EE8F00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 2V6' stroke='%23EE8F00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3 10H21' stroke='%23EE8F00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  display: block;
+}
+.cameras .content .schedule .schedule-box .schedule-col .schedule-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cameras .content .schedule .schedule-box .schedule-col .schedule-wrap li {
+  display: flex;
+}
+.cameras .content .schedule .schedule-box .schedule-col .schedule-wrap li p {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 23.4px */
+  width: 170px;
+}
+.cameras .content .schedule .schedule-box .schedule-col .schedule-wrap li span {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
+}
+.cameras .content .schedule .schedule-box .schedule-col .schedule-wrap li:last-child p {
+  color: #EE8F00;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%; /* 23.4px */
+}
+.cameras .content .schedule .schedule-box .schedule-col .schedule-wrap li:last-child span {
+  color: #EE8F00;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 23.4px */
+}/*# sourceMappingURL=hall.css.map */

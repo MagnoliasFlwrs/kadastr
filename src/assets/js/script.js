@@ -188,9 +188,11 @@ function closeCheckModal()  {
     })
   })
 }
+if (checkBtn) {
+  openCheckModal() ;
+  closeCheckModal();
+} 
 
-openCheckModal() ;
-closeCheckModal();
 
 // order-modal
 
@@ -214,6 +216,7 @@ function closeOrderModal()  {
     })
   })
 }
-
-openOrderModal() ;
+if (orderBtn) {
+  openOrderModal() ;
 closeOrderModal();
+} 
