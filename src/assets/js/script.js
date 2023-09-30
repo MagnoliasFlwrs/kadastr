@@ -120,6 +120,47 @@ const swiper6 = new Swiper('.registration-swiper', {
 });
 
 
+const calendars = document.querySelectorAll('.calendar');
+
+if (calendars) {
+  calendars.forEach(el => {
+    const options = {
+      settings : {
+        lang: 'ru',
+        visibility: {
+          weekend: false,
+          today: false,
+        },
+      },
+      input: true,
+      actions: {
+        changeToInput(e, HTMLInputElement, dates, time, hours, minutes, keeping) {
+          if (dates[1]) {
+            dates.sort((a, b) => +new Date(a) - +new Date(b));
+            HTMLInputElement.value = `${dates[0]} — ${dates[dates.length - 1]}`;
+            setTimeout(()=> {
+              calendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+            }, 1000)
+          } else if (dates[0]) {
+            HTMLInputElement.value = dates[0];
+            setTimeout(()=> {
+              calendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+            }, 1000)
+          } else {
+            HTMLInputElement.value = '';
+            setTimeout(()=> {
+              calendar.HTMLElement.classList.add('vanilla-calendar_hidden');
+            }, 1000)
+          }
+
+        },
+      },
+    };
+    const calendar = new VanillaCalendar(el , options);
+    calendar.init();
+  })
+}
+
 const burger = document.querySelector('.burger');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeBurger = document.querySelector('.menu-close-icon');
@@ -242,3 +283,75 @@ if (orderBtn) {
   openOrderModal() ;
 closeOrderModal();
 }
+
+// gallery
+
+const thumbs = document.querySelectorAll('.mini-img');
+const bigImages = document.querySelectorAll('.images img');
+
+if (thumbs) {
+  thumbs.forEach((el,i)=> {
+    el.addEventListener('click' , ()=> {
+      bigImages.forEach(img=> {
+        if(img.classList.contains('active')) {
+          img.classList.remove('active');
+        }
+      })
+      bigImages[i].classList.add('active');
+
+    })
+  })
+}
+
+// filter-select
+
+const filterSelects = document.querySelectorAll('.item-btn');
+
+if (filterSelects) {
+  filterSelects.forEach(el => {
+    el.addEventListener('click' , ()=> {
+      if(el.classList.contains('check-list')) {
+        const list = el.closest('.item-wrapper').querySelector('.list');
+        const listOptions = list.querySelectorAll('li');
+
+        list.classList.add('active');
+        listOptions.forEach(li => {
+          li.addEventListener('click' , ()=> {
+            setTimeout(() => {
+              list.classList.remove('active');
+            }, 1500);
+          })
+        })
+      } else {
+        const list = el.closest('.item-wrapper').querySelector('.list');
+        const listOptions = list.querySelectorAll('li');
+        const title = el.querySelector('p');
+
+        list.classList.add('active');
+
+        listOptions.forEach(li => {
+          li.addEventListener('click' , ()=> {
+            title.innerHTML = li.innerHTML;
+            title.dataset.current = li.dataset.value;
+            list.classList.remove('active');
+          })
+        })
+      }
+
+    })
+  })
+}
+
+// sort
+
+const sortPrice = document.querySelector('.sort-price');
+const sortDate = document.querySelector('.sort-date');
+
+sortPrice?.addEventListener('click' , ()=> {
+  sortPrice.classList.toggle('active');
+  sortPrice.classList.toggle('down');
+})
+sortDate?.addEventListener('click' , ()=> {
+  sortDate.classList.toggle('active');
+  sortDate.classList.toggle('down');
+})

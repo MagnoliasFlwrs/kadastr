@@ -1,0 +1,61 @@
+@import url(../../assets/styles/style.css);
+@import url(../../assets/styles/swiper-bundle.min.css);
+@import url(../../assets/styles/header.css);
+@import url(../../assets/styles/footer.css);
+
+.head-row {
+    padding: 20px 0 50px;
+    width: 100%;
+
+    h1 {
+        color: #090909;
+        font-family: Montserrat;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%; /* 65px */
+        margin-top: 104px;
+
+        @media (max-width:1024px) {
+            font-size: 35px;
+        }
+    }
+}
+.addressing-inner {
+    padding: 0 0 100px;
+
+    .wrapper {
+        width: 100%;
+        padding-left: 60px;
+        margin-bottom: 50px;
+
+        @media (max-width:768px) {
+            padding-left: 0;
+        }
+
+        p {
+            color: #1A2A37;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%; /* 20.8px */
+            margin-bottom: 30px;
+        }
+
+        .gray-btn:hover svg path {
+            stroke: #FFF;
+        }
+    }
+    .addressing-btns {
+        width: 100%;
+        padding-left: 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        @media (max-width:768px) {
+            padding-left: 0;
+        }
+    }
+}
