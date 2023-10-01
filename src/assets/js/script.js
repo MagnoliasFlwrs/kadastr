@@ -118,6 +118,30 @@ const swiper6 = new Swiper('.registration-swiper', {
         }
     }
 });
+var swiper7 = new Swiper(".gallery-mini", {
+  spaceBetween: 30,
+  slidesPerView: 2,
+  direction: "horizontal",
+  navigation: {
+    nextEl: ".gallery-mini-button-next",
+    prevEl: ".gallery-mini-button-prev",
+  },
+  breakpoints: {
+    1024: {
+      slidesPerView: 4,
+    },
+  }
+});
+var swiper8 = new Swiper(".gallery", {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".gallery-button-next",
+    prevEl: ".gallery-button-prev",
+  },
+  thumbs: {
+    swiper: swiper7,
+  },
+});
 
 
 const calendars = document.querySelectorAll('.calendar');

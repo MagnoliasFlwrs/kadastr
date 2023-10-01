@@ -104,6 +104,9 @@ body {
   box-shadow: none;
   color: #fff;
 }
+.gray-btn svg {
+  flex-shrink: 0;
+}
 
 .custom-checkbox {
   display: flex;
