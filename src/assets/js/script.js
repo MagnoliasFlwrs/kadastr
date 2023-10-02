@@ -29,9 +29,9 @@ const swiper3 = new Swiper('.news-swiper', {
     loop: true,
     slidesPerView:1,
     spaceBetween: 10,
-    navigation: {
-      nextEl: '.news-btn-next',
-      prevEl: '.news-btn-prev',
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
     breakpoints: {
         600: {
@@ -41,7 +41,7 @@ const swiper3 = new Swiper('.news-swiper', {
             slidesPerView: 2,
           },
         1200: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 20,
           }
       }
@@ -248,6 +248,11 @@ if (servicesSelect) {
         servicesSelect.dataset.current = el.dataset.value;
         servicesSelectBody.classList.remove('active')
       })
+  })
+  document.addEventListener('click' , (e)=> {
+    if ((!e.target.closest('.services-wrap')) && servicesSelectBody.classList.contains('active')) {
+      servicesSelectBody.classList.remove('active');
+    }
   })
 }
 
