@@ -142,6 +142,24 @@ var swiper8 = new Swiper(".gallery", {
     swiper: swiper7,
   },
 });
+const swiper9 = new Swiper('.contacts-swiper', {
+  loop: true,
+  slidesPerView:1,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: '.contacts-btn-next',
+    prevEl: '.contacts-btn-prev',
+  },
+  breakpoints: {
+      1024: {
+        slidesPerView: 2,
+      },
+      1200: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        }
+    }
+});
 
 
 const calendars = document.querySelectorAll('.calendar');
