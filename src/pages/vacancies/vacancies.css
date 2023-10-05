@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(../../assets/styles/style.css);
 @import url(../../assets/styles/swiper-bundle.min.css);
 @import url(../../assets/styles/header.css);
@@ -34,6 +35,12 @@
   gap: 50px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .vacancies-inner .vacancies-cards .vacancies-card {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
 .vacancies-inner .vacancies-cards .vacancies-card:hover .num {
   color: #EE8F00;
 }
@@ -46,6 +53,12 @@
   line-height: 75px; /* 75% */
   transition: 0.3s ease;
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .vacancies-inner .vacancies-cards .vacancies-card .num {
+    font-size: 50px;
+    line-height: 55px;
+  }
 }
 .vacancies-inner .vacancies-cards .vacancies-card .vacancy-inner {
   display: flex;
@@ -175,6 +188,11 @@
   gap: 30px;
   padding-left: 50px;
 }
+@media (max-width: 768px) {
+  .vacancies-inner .vacancies-cards .vacancies-card .vacancy-inner .hidden-content .schedule ul {
+    padding-left: 0;
+  }
+}
 .vacancies-inner .vacancies-cards .vacancies-card .vacancy-inner .hidden-content .schedule ul li {
   color: #090909;
   font-family: Montserrat;
@@ -252,6 +270,54 @@
 .vacancies-inner .vacancies-cards .vacancies-card .vacancy-inner .show-more.active::after {
   transform: rotate(180deg);
 }
+.vacancies-inner .vacancies-cards .vacancies-card .vacancy-modal-btn {
+  border: none;
+  cursor: pointer;
+}
+.vacancies-inner .controls {
+  margin-top: 100px;
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 1024px) {
+  .vacancies-inner .controls {
+    flex-wrap: wrap;
+  }
+}
+.vacancies-inner .controls li {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 15px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background: #F5F5F7;
+  cursor: pointer;
+  color: #1A2A37;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+.vacancies-inner .controls li.active {
+  background: #1A2A37;
+  color: #FFF;
+}
+.vacancies-inner .controls li:hover {
+  background: #EE8F00;
+  color: #fff;
+}
+.vacancies-inner .controls li:hover span svg path {
+  fill: #FFF;
+}
+.vacancies-inner .controls li span {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%; /* 16px */
+}
 
 .overlay {
   position: fixed;
@@ -282,4 +348,272 @@
   border-radius: 30px;
   background: #FFF;
   box-shadow: 0px 10px 21px -4px rgba(0, 0, 0, 0.25);
+  height: 90vh;
+  z-index: 5;
+  display: none;
+}
+.vacancy-modal.active {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .vacancy-modal {
+    width: 90%;
+  }
+}
+.vacancy-modal .close-wrap {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+.vacancy-modal .modal-wrap {
+  display: flex;
+  padding: 10px 50px 60px 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 100px;
+  align-self: stretch;
+  overflow-y: scroll;
+  scrollbar-color: #EE8F00 #f9f9fd; /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;
+}
+@media (max-width: 1024px) {
+  .vacancy-modal .modal-wrap {
+    padding: 10px 20px 20px 20px;
+  }
+}
+.vacancy-modal .modal-wrap::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 10px;
+}
+.vacancy-modal .modal-wrap::-webkit-scrollbar-thumb {
+  background-color: #EE8F00;
+  border-radius: 10px;
+}
+.vacancy-modal .modal-wrap::-webkit-scrollbar-track {
+  -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+  background-color: #f9f9fd;
+  border-radius: 10px;
+}
+.vacancy-modal .modal-wrap::-webkit-scrollbar-button {
+  background: transparent;
+  height: 23px;
+}
+.vacancy-modal .modal-wrap h2 {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 65px */
+}
+@media (max-width: 1024px) {
+  .vacancy-modal .modal-wrap h2 {
+    font-size: 30px;
+  }
+}
+.vacancy-modal .modal-wrap form {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100%;
+}
+.vacancy-modal .modal-wrap form .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.vacancy-modal .modal-wrap form .input-wrapper p {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+.vacancy-modal .modal-wrap form .input-wrapper p span {
+  color: #FF7F50;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.vacancy-modal .modal-wrap form .input-wrapper input {
+  display: flex;
+  padding-bottom: 0px;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  background: #FFF;
+  box-shadow: 0px -1px 0px 0px #1A2A37 inset;
+  border: none;
+  padding-bottom: 20px;
+  outline: none;
+}
+.vacancy-modal .modal-wrap form .input-wrapper input::-moz-placeholder {
+  color: rgba(26, 42, 55, 0.4);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+.vacancy-modal .modal-wrap form .input-wrapper input::placeholder {
+  color: rgba(26, 42, 55, 0.4);
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 20.8px */
+}
+.vacancy-modal .modal-wrap form .input-wrapper .input-inner {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+}
+@media (max-width: 560px) {
+  .vacancy-modal .modal-wrap form .input-wrapper .input-inner {
+    flex-direction: column;
+  }
+}
+.vacancy-modal .modal-wrap form .input-wrapper .input-inner input {
+  width: calc((100% - 50px) / 2);
+}
+@media (max-width: 560px) {
+  .vacancy-modal .modal-wrap form .input-wrapper .input-inner input {
+    width: 100%;
+  }
+}
+.vacancy-modal .modal-wrap form .form-foot {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.vacancy-modal .modal-wrap form .form-foot textarea {
+  display: flex;
+  height: 187px;
+  padding: 20px 0px;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 10px;
+  border: 1px solid rgba(26, 42, 55, 0.2);
+  background: #FFF;
+  resize: none;
+  outline: none;
+}
+.vacancy-modal .modal-wrap form .form-foot .fileform {
+  position: relative;
+  cursor: pointer;
+}
+.vacancy-modal .modal-wrap form .form-foot .fileform .selectbutton {
+  cursor: pointer;
+}
+@media (max-width: 450px) {
+  .vacancy-modal .modal-wrap form .form-foot .fileform .selectbutton {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+.vacancy-modal .modal-wrap form .form-foot .fileform #upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -moz-opacity: 0;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  font-size: 150px;
+  z-index: 20;
+  height: 70px;
+  cursor: pointer;
+}
+.vacancy-modal .modal-wrap form .form-foot .submit-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .vacancy-modal .modal-wrap form .form-foot .submit-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width: 400px) {
+  .vacancy-modal .modal-wrap form .form-foot .submit-inner img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+.vacancy-modal .modal-wrap form .form-foot .submit-inner .gray-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.custom-checkbox .checkbox {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.custom-checkbox input {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+}
+
+.checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #C6CAE2;
+  border-radius: 2px;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+.custom-checkbox span {
+  color: #1A2A37;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 18.2px */
+}
+.custom-checkbox span a {
+  color: #EE8F00;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  text-decoration-line: underline;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: auto;
+  display: none;
+}
+
+.custom-checkbox input:checked ~ .checkbox .checkmark {
+  display: block;
+}
+
+.custom-checkbox input:checked ~ .checkbox {
+  background: #EE8F00;
+  border: 1px solid #EE8F00;
 }/*# sourceMappingURL=vacancies.css.map */

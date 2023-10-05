@@ -328,9 +328,63 @@ function closeOrderModal()  {
 }
 if (orderBtn) {
   openOrderModal() ;
-closeOrderModal();
+  closeOrderModal();
+}
+// checking-modal
+
+const checkingBtn = document.querySelector('.checking-btn');
+const checkingModal = document.querySelector('.checking-modal');
+const checkingModalClose = document.querySelector('.checking-modal .close-wrap');
+
+function opencheckingModal() {
+  checkingBtn.addEventListener('click' , ()=> {
+    overlay.classList.add('open');
+    checkingModal.classList.add('active');
+  })
+}
+const checkingModalCloseArr = [overlay , checkingModalClose];
+
+function closecheckingModal()  {
+  checkingModalCloseArr.forEach(el => {
+    el.addEventListener('click' , ()=> {
+      overlay.classList.remove('open');
+      checkingModal.classList.remove('active');
+    })
+  })
+}
+if (checkingBtn) {
+  opencheckingModal() ;
+  closecheckingModal();
 }
 
+// vacancy-modal
+const vacancyBtns = document.querySelectorAll('.vacancy-modal-btn');
+const vacancyModal = document.querySelector('.vacancy-modal');
+const vacancyModalClose = document.querySelector('.vacancy-modal .close-wrap');
+
+function openvacancyModal() {
+  vacancyBtns.forEach(vacancyBtn =>{
+    vacancyBtn.addEventListener('click' , ()=> {
+      overlay.classList.add('open');
+      vacancyModal.classList.add('active');
+    })
+  })
+
+}
+const vacancyModalCloseArr = [overlay , vacancyModalClose];
+
+function closevacancyModal()  {
+  vacancyModalCloseArr.forEach(el => {
+    el.addEventListener('click' , ()=> {
+      overlay.classList.remove('open');
+      vacancyModal.classList.remove('active');
+    })
+  })
+}
+if (vacancyBtns) {
+  openvacancyModal() ;
+closevacancyModal();
+}
 // gallery
 
 const thumbs = document.querySelectorAll('.mini-img');
@@ -420,7 +474,7 @@ if (showMoreBtns) {
         el.textContent = 'Развернуть'
       }
     })
-    
+
   })
 }
 

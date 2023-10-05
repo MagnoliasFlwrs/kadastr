@@ -1,0 +1,225 @@
+@import url(../../assets/styles/style.css);
+@import url(../../assets/styles/swiper-bundle.min.css);
+@import url(../../assets/styles/header.css);
+@import url(../../assets/styles/footer.css);
+
+
+
+.head-row {
+    padding: 20px 0 50px;
+    width: 100%;
+
+    h1 {
+        color: #090909;
+        font-family: Montserrat;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 130%; /* 65px */
+        margin-top: 104px;
+
+        @media (max-width:1024px) {
+            font-size: 35px;
+        }
+    }
+}
+.search-inner {
+    padding: 0 0 100px;
+
+    .request-text {
+        color: #EE8F00;
+    }
+
+    .search-content {
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        @media (max-width:1024px) {
+            padding: 0;
+        }
+        .search-row {
+            width: 100%;
+            position: relative;
+            input {
+                width: 100%;
+                display: flex;
+                padding-bottom: 0px;
+                align-items: center;
+                gap: 10px;
+                align-self: stretch;
+                background: #FFF;
+                box-shadow: 0px -1px 0px 0px #1A2A37 inset;
+                border: none;
+                padding-bottom: 20px;
+                padding-right: 20px;
+                outline: none;
+
+                &::placeholder {
+                    color: rgba(26, 42, 55, 0.40);
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 130%; /* 20.8px */
+                }
+            }
+            button {
+                background-color: transparent;
+                border: none;
+                position: absolute;
+                right: 20px;
+                top: 0;
+                cursor: pointer;
+            }
+        }
+        .controls {
+            margin-top: 100px;
+            display: flex;
+            gap: 30px;
+            @media (max-width:1024px) {
+                flex-wrap: wrap;
+            }
+            li {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                padding: 15px 20px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                border-radius: 100px;
+                background: #F5F5F7;
+                cursor: pointer;
+                color: #1A2A37;
+                transition: .3s ease;
+                flex-shrink: 0;
+
+
+                &.active {
+                    background: #1A2A37;
+                    color: #FFF;
+                }
+                &:hover {
+                    background: #EE8F00;
+                    color: #fff;
+
+                    span {
+                        svg path {
+                            fill: #FFF;
+                        }
+                    }
+                }
+
+                span {
+                    text-align: center;
+                    font-family: Montserrat;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 100%; /* 16px */
+                }
+            }
+        }
+        .search-results {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+
+            .search-result {
+                padding-bottom: 50px;
+                border-bottom: 1px solid #D9D9D9;
+                display: flex;
+                gap: 50px;
+                cursor: pointer;
+
+                @media (max-width:768px) {
+                    flex-direction: column;
+                    gap: 25px;
+                }
+                &:hover {
+                    .num {
+                        color: #EE8F00;
+                    }
+                    .search-result-content {
+                        h2 {
+                            text-decoration-line: underline;
+                        }
+                        p {
+                            text-decoration-line: underline;
+                        }
+                    }
+                }
+                .num {
+                    color: rgba(255, 127, 80, 0.20);
+                    font-family: Montserrat;
+                    font-size: 100px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 75px; /* 75% */
+                    transition: .3s ease;
+                    flex-shrink: 0;
+
+                    @media (max-width:768px) {
+                        font-size: 50px;
+                        line-height: 55px;
+                    }
+                }
+                .search-result-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    h2 {
+                        color: #090909;
+                        font-family: Montserrat;
+                        font-size: 35px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 130%; /* 45.5px */
+                        transition: .3s ease;
+                        @media (max-width:1024px) {
+                            font-size: 25px;
+                        }
+                    }
+                    p {
+                        color: #090909;
+                        font-family: Montserrat;
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 130%; /* 20.8px */
+                        transition: .3s ease;
+                    }
+                    a {
+                        color: #1A2A37;
+                        font-family: Montserrat;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: 130%; /* 15.6px */
+                        text-transform: uppercase;
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        transition: .3s ease;
+
+                        &:hover {
+                            color: #EE8F00;
+                            font-family: Montserrat;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 130%; /* 15.6px */
+                            text-transform: uppercase;
+
+                            svg path {
+                                stroke: #EE8F00;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
