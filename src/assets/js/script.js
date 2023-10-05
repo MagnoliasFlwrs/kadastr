@@ -402,3 +402,25 @@ sortDate?.addEventListener('click' , ()=> {
   sortDate.classList.toggle('active');
   sortDate.classList.toggle('down');
 })
+
+// show more
+
+const showMoreBtns = document.querySelectorAll('.show-more');
+
+
+if (showMoreBtns) {
+  showMoreBtns.forEach(el=> {
+    el.addEventListener('click' , (e)=> {
+      let currentContent = e.target.closest('.vacancy-inner').querySelector('.hidden-content');
+      currentContent.classList.toggle('active');
+      el.classList.toggle('active');
+      if(el.classList.contains('active')) {
+        el.textContent = 'Свернуть'
+      } else {
+        el.textContent = 'Развернуть'
+      }
+    })
+    
+  })
+}
+
